@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Security Awareness Lab</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 520px; margin: 50px auto; padding: 20px; background: #f3f5f7; }
+    main { background: white; padding: 24px; border-radius: 12px; }
+    .warning { color: #a12622; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>University Portal Simulation</h2>
+    <p>Training scenario: View your class announcement.</p>
+    <form id="demoForm">
+      <label>Sample username</label><br>
+      <input type="text" autocomplete="off"><br><br>
+      <label>Sample password</label><br>
+      <input type="password" autocomplete="off"><br><br>
+      <button type="submit">Continue</button>
+    </form>
+    <section id="result" hidden>
+      <h3 class="warning">Security Awareness Alert!</h3>
+      <p>This was a simulated phishing page. Never enter real credentials on an unfamiliar website opened through a QR code.</p>
+    </section>
+  </main>
+  <script>
+    document.getElementById("demoForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("result").hidden = false;
+    });
+  </script>
+</body>
+</html>
